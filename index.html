@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My AI Agent</title>
+<style>
+body {
+  background:#111;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+}
+#chat {
+  height:300px;
+  overflow:auto;
+  border:1px solid white;
+  margin:10px;
+  padding:10px;
+}
+input {
+  width:70%;
+  padding:10px;
+}
+button {
+  padding:10px;
+}
+</style>
+</head>
+<body>
+
+<h2>Yasir AI Agent 🤖</h2>
+
+<div id="chat"></div>
+
+<input type="text" id="userInput" placeholder="Type message...">
+<button onclick="reply()">Send</button>
+
+<script>
+function reply(){
+  let input = document.getElementById("userInput").value;
+  let chat = document.getElementById("chat");
+
+  chat.innerHTML += "<p><b>You:</b> "+input+"</p>";
+
+  let response = "Main aapka AI Agent hoon 🤖";
+
+  if(input.toLowerCase().includes("hello")){
+    response = "Hello Yasir bhai 👋";
+  }
+
+  if(input.toLowerCase().includes("time")){
+    response = "Current time: " + new Date().toLocaleTimeString();
+  }
+
+  chat.innerHTML += "<p><b>AI:</b> "+response+"</p>";
+  document.getElementById("userInput").value="";
+}
+</script>
+
+</body>
+</html>
